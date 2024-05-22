@@ -78,3 +78,9 @@ def accounts_not_following_you():
           else:
                new.append(i)
      return new
+
+
+if __name__=="__main__":
+     a = accounts_not_following_you()
+     for i in a:
+          print(i)
