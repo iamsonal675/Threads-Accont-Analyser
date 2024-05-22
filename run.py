@@ -41,21 +41,21 @@ def handle_recent_follow_requests(blo):
      lst:list = []
      for i in blo:
           lst.append(i["string_list_data"][0]["value"])
-     print(lst)
+     return lst
 
 def handle_recently_unfollowed_accounts(blo):
      blo = blo[6]["text_post_app_text_post_app_unfollowed_users"]
      lst:list = []
      for i in blo:
           lst.append(i["string_list_data"][0]["value"])
-     print(lst)
+     return lst
 
 def handle_threads_viewed(blo):
      blo = blo[8]["text_post_app_text_post_app_posts_seen"]
      lst:list = []
      for i in blo:
           lst.append(i["string_map_data"]["Author"]["value"])
-     print(lst)
+     return lst
 
 def accounts_following_you():
      follower = handle_followers(open_data())
@@ -78,7 +78,3 @@ def accounts_not_following_you():
           else:
                new.append(i)
      return new
-
-a = accounts_not_following_you()
-for i in a:
-     print(i)
