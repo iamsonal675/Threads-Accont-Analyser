@@ -1,27 +1,26 @@
 from json import load
 
 def open_data():
-     blocked_account = load(open("./data/connections/followers_and_following/blocked_accounts.json"))
-     close_friends = load(open("./data/connections/followers_and_following/close_friends.json"))
-     hide_story_from = load(open("./data/connections/followers_and_following/hide_story_from.json"))
-     pending_follow_requests = load(open("./data/connections/followers_and_following/pending_follow_requests.json"))
-     recently_follow_requests = load(open("./data/connections/followers_and_following/recent_follow_requests.json"))
-     recently_unfollow_account = load(open("./data/connections/followers_and_following/recently_unfollowed_accounts.json"))
-     removed_suggestions = load(open("./data/connections/followers_and_following/removed_suggestions.json"))
-     restricted_accounts = load(open("./data/connections/followers_and_following/restricted_accounts.json"))
-     followers_1 = load(open("./data/connections/followers_and_following/followers_1.json"))
-     following = load(open("./data/connections/followers_and_following/following.json"))
+     followers = load(open("./threads/your_instagram_activity/threads/followers.json"))
+     following = load(open("./threads/your_instagram_activity/threads/following.json"))
+     hide_story_from = load(open("./threads/your_instagram_activity/threads/liked_threads.json"))
+     pending_follow_requests = load(open("./threads/your_instagram_activity/threads/pending_follow_requests.json"))
+     personal_information = load(open("./threads/your_instagram_activity/threads/personal_information.json"))
+     recent_follow_requests = load(open("./threads/your_instagram_activity/threads/recent_follow_requests.json"))
+     recent_unfollowed_accounts = load(open("./threads/your_instagram_activity/threads/recent_unfollowed_accounts.json"))
+     threads_and_replies = load(open("./threads/your_instagram_activity/threads/threads_and_replies.json"))
+     threads_viewed = load(open("./threads/your_instagram_activity/threads/threads_viewed.json"))
      return [
-          blocked_account,
-          close_friends,
+          followers,
+          following,
+          hide_story_from,
           hide_story_from,
           pending_follow_requests,
-          recently_follow_requests,
-          recently_unfollow_account,
-          removed_suggestions,
-          restricted_accounts,
-          followers_1,
-          following
+          personal_information,
+          recent_follow_requests,
+          recent_unfollowed_accounts,
+          threads_and_replies,
+          threads_viewed
      ]
 
 def handle_blocked_accounts(blo):
