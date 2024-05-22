@@ -36,3 +36,25 @@ def handle_following(blo):
           lst.append(i["string_list_data"][0]["value"])
      return lst
 
+def handle_recent_follow_requests(blo):
+     blo = blo[5]["text_post_app_text_post_app_permanent_follow_requests"]
+     lst:list = []
+     for i in blo:
+          lst.append(i["string_list_data"][0]["value"])
+     print(lst)
+
+def handle_recently_unfollowed_accounts(blo):
+     blo = blo[6]["text_post_app_text_post_app_unfollowed_users"]
+     lst:list = []
+     for i in blo:
+          lst.append(i["string_list_data"][0]["value"])
+     print(lst)
+
+def handle_threads_viewed(blo):
+     blo = blo[8]["text_post_app_text_post_app_posts_seen"]
+     lst:list = []
+     for i in blo:
+          lst.append(i["string_map_data"]["Author"]["value"])
+     print(lst)
+
+handle_threads_viewed(open_data())
